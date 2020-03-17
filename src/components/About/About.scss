@@ -1,0 +1,16 @@
+@import "../../stylesheets//partials/common";
+
+.avatar {
+    &__image {
+        margin: auto;
+        padding: 10px 0 10px 0;
+    }
+}
+
+.about {
+    &__links {
+        a {
+            @extend .links;
+        }
+    }
+}

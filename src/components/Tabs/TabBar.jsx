@@ -95,10 +95,10 @@ export default function TabBar() {
                     <CardList endpoint={"people"} />
                 </TabPanel>
                 <TabPanel value={value} index={2} dir={theme.direction}>
-                    Item Three
+                    <CardList endpoint={"vehicles"} />
                 </TabPanel>
                 <TabPanel value={value} index={3} dir={theme.direction}>
-                    Item Four
+                <CardList endpoint={"starships"} />
                 </TabPanel>
                 <TabPanel value={value} index={4} dir={theme.direction}>
                     Item Five

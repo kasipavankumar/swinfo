@@ -1,0 +1,16 @@
+@import "../../stylesheets/partials/mixins";
+
+$template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+.circularProgressIndicator {
+    @include flex(column, center, center);
+    margin: 0;
+    width: auto;
+    height: 70vh;
+}
+
+.cards {
+    &__grid {
+        @include grid(10px, $template-columns);
+    }
+}

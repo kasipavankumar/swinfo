@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import { Avatar } from "@material-ui/core";
 import InfoRounded from "@material-ui/icons/InfoRounded";
 
-import "../../stylesheets/About.scss";
+import "./About.scss";
 
 const styles = theme => ({
     root: {

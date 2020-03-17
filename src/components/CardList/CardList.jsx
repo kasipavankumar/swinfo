@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import DataCard from "../Card/Card";
 import { CircularProgress } from "@material-ui/core";
 
-import "../../stylesheets/CardList.scss";
+import "./CardList.scss";
 
 class CardList extends Component {
     constructor(props) {
@@ -23,11 +23,8 @@ class CardList extends Component {
             Cards: results.map((result, i) => (
                 <DataCard
                     key={i}
-                    title={result.title}
-                    openingCrawl={result.opening_crawl}
-                    director={result.director}
-                    producer={result.producer}
-                    releaseDate={result.release_date}
+                    endpoint={this.props.endpoint}
+                    data={result}
                 />
             ))
         });
