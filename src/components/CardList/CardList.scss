@@ -1,6 +1,9 @@
 @import "../../stylesheets/partials/mixins";
 
 $template-columns: repeat(auto-fit, minmax(300px, 1fr));
+$template-columns-mobile: repeat(auto-fit, minmax(250px, 1fr));
+$width-name: max-width;
+$target-width: 320px;
 
 .circularProgressIndicator {
     @include flex(column, center, center);
@@ -12,5 +15,13 @@ $template-columns: repeat(auto-fit, minmax(300px, 1fr));
 .cards {
     &__grid {
         @include grid(10px, $template-columns);
+    }
+}
+
+@media screen and ($width-name: $target-width) {
+    .cards {
+        &__grid {
+            @include grid(10px, $template-columns-mobile);
+        }
     }
 }

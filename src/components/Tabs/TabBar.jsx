@@ -98,13 +98,13 @@ export default function TabBar() {
                     <CardList endpoint={"vehicles"} />
                 </TabPanel>
                 <TabPanel value={value} index={3} dir={theme.direction}>
-                <CardList endpoint={"starships"} />
+                    <CardList endpoint={"starships"} />
                 </TabPanel>
                 <TabPanel value={value} index={4} dir={theme.direction}>
-                    Item Five
+                    <CardList endpoint={"species"} />
                 </TabPanel>
                 <TabPanel value={value} index={5} dir={theme.direction}>
-                    Item Six
+                    <CardList endpoint={"planets"} />
                 </TabPanel>
             </SwipeableViews>
         </div>
