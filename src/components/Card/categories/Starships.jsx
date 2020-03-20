@@ -35,24 +35,24 @@ function Starships({ data }) {
     } = data;
 
     return (
-        <Card className={classes.root}>
+        <Card className={`${classes.root}, card`}>
             <CardMedia
                 className={classes.media}
                 image="https://starwars-visualguide.com/assets/img/films/4.jpg"
                 title={name}
             />
-            <CardContent>
+            <CardContent className="text-black">
                 <Typography gutterBottom variant="h5" component="h2">
                     {name}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="body2" component="p">
                     Model: {model}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="body2" component="p">
                     Manufacturer: {manufacturer}
                 </Typography>
             </CardContent>
-            <CardActions disableSpacing>
+            <CardActions className="cardActions" disableSpacing>
                 <IconButton aria-label="share">
                     <ShareIcon />
                 </IconButton>
@@ -68,7 +68,7 @@ function Starships({ data }) {
                 </IconButton>
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
+                <CardContent className="text-black">
                     <Typography paragraph>
                         Cost In Credits: {cost_in_credits}
                     </Typography>

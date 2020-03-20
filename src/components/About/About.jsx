@@ -28,14 +28,14 @@ const DialogTitle = withStyles(styles)(props => {
     const { children, classes, onClose, ...other } = props;
     return (
         <MuiDialogTitle disableTypography className={classes.root} {...other}>
-            <Typography variant="h6">{children}</Typography>
+            <Typography color="primary" variant="h6">{children}</Typography>
             {onClose ? (
                 <IconButton
                     aria-label="close"
                     className={classes.closeButton}
                     onClick={onClose}
                 >
-                    <CloseIcon />
+                    <CloseIcon color="primary" />
                 </IconButton>
             ) : null}
         </MuiDialogTitle>
@@ -61,32 +61,36 @@ export default function CustomizedDialogs() {
     return (
         <div>
             <IconButton onClick={handleClickOpen}>
-                <InfoRounded style={{ color: "white" }} />
+                <InfoRounded color="primary" />
             </IconButton>
             <Dialog
                 onClose={handleClose}
                 aria-labelledby="customized-dialog-title"
                 open={open}
             >
-                <DialogTitle id="customized-dialog-title" onClose={handleClose}>
+                <DialogTitle
+                    id="customized-dialog-title"
+                    onClose={handleClose}
+                    className="bg-primary-grey"
+                >
                     Developer
                 </DialogTitle>
-                <DialogContent dividers>
+                <DialogContent className="bg-primary-grey" dividers>
                     <Avatar
                         className="avatar__image"
                         alt="kman"
-                        src="https://avatars0.githubusercontent.com/u/44864604?s=100"
+                        src="https://avatars0.githubusercontent.com/u/44864604?s=90"
                     />
-                    <Typography gutterBottom>
+                    <Typography color="primary" gutterBottom>
                         Hello there, my name is <strong>thekman</strong>. I'm a
                         full stack web developer from India.
                     </Typography>
-                    <Typography gutterBottom>
+                    <Typography color="primary" gutterBottom>
                         This site is made as a project for web development
                         course on Udemy.
                     </Typography>
                     <div className="about__links">
-                        <Typography gutterBottom>
+                        <Typography color="primary" gutterBottom>
                             Components are provided by{" "}
                             <a
                                 target="_blank"
@@ -95,9 +99,8 @@ export default function CustomizedDialogs() {
                             >
                                 Material UI
                             </a>
-                            .
                         </Typography>
-                        <Typography gutterBottom>
+                        <Typography color="primary" gutterBottom>
                             Star Wars API by{" "}
                             <a
                                 target="_blank"
@@ -106,7 +109,6 @@ export default function CustomizedDialogs() {
                             >
                                 SWAPI
                             </a>
-                            .
                         </Typography>
                     </div>
                 </DialogContent>

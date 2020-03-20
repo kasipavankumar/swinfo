@@ -1,0 +1,8 @@
+@import "../../stylesheets/partials/variables";
+@import "../../stylesheets/partials/common";
+
+.navBar {
+    .MuiSvgIcon-root {
+        color: $primaryYellow !important;
+    }
+}

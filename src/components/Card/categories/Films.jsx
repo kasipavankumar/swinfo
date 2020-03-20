@@ -12,6 +12,8 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import useStyles from "../Common";
 
+import "../Card.scss";
+
 function Films({ data }) {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
@@ -23,21 +25,21 @@ function Films({ data }) {
     const { title, opening_crawl, release_date, director, producer } = data;
 
     return (
-        <Card className={classes.root}>
+        <Card className={`${classes.root}, card`}>
             <CardMedia
                 className={classes.media}
                 image="https://starwars-visualguide.com/assets/img/films/4.jpg"
                 title={title}
             />
-            <CardContent>
+            <CardContent className="text-black">
                 <Typography gutterBottom variant="h5" component="h2">
                     {title}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="body2" component="p">
                     {opening_crawl}
                 </Typography>
             </CardContent>
-            <CardActions disableSpacing>
+            <CardActions className="cardActions" disableSpacing>
                 <IconButton aria-label="share">
                     <ShareIcon />
                 </IconButton>
@@ -53,7 +55,7 @@ function Films({ data }) {
                 </IconButton>
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
+                <CardContent className="text-black">
                     <Typography paragraph>
                         Release Date: {release_date}
                     </Typography>

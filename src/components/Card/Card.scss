@@ -1,0 +1,15 @@
+@import "../../stylesheets/partials/common";
+
+.card {
+    background-color: #ffe400 !important;
+}
+
+.text-black {
+    color: black !important;
+}
+
+.cardActions {
+    .MuiIconButton-root {
+        color: black !important;
+    }
+}

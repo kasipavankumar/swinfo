@@ -6,6 +6,8 @@ import Typography from "@material-ui/core/Typography";
 
 import About from "../About/About";
 
+import "./Navbar.scss";
+
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1
@@ -23,9 +25,9 @@ export default function Navbar() {
 
     return (
         <div className={classes.root}>
-            <AppBar position="static">
+            <AppBar position="static" color="secondary">
                 <Toolbar>
-                    <Typography variant="h6" className={classes.title}>
+                    <Typography variant="h6" color="primary" className={classes.title}>
                         Star Wars
                     </Typography>
 

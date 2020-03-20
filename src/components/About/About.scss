@@ -1,4 +1,4 @@
-@import "../../stylesheets//partials/common";
+@import "../../stylesheets/partials/common";
 
 .avatar {
     &__image {
@@ -13,4 +13,8 @@
             @extend .links;
         }
     }
+}
+
+.bg-primary-grey {
+    background-color: $primaryGrey !important;
 }

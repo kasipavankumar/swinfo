@@ -11,6 +11,8 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import CardList from "../CardList/CardList";
 
+import "./TabBar.scss";
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -65,7 +67,7 @@ export default function TabBar() {
 
     return (
         <div className={classes.root}>
-            <AppBar position="static" color="default">
+            <AppBar position="static" color="secondary">
                 <Tabs
                     value={value}
                     onChange={handleChange}
@@ -87,6 +89,7 @@ export default function TabBar() {
                 axis={theme.direction === "rtl" ? "x-reverse" : "x"}
                 index={value}
                 onChangeIndex={handleChangeIndex}
+                className="swipeViews"
             >
                 <TabPanel value={value} index={0} dir={theme.direction}>
                     <CardList endpoint={"films"} />

@@ -16,16 +16,19 @@ class CardList extends Component {
         this.CardList();
     }
 
+    componentWillUnmount() {
+        this.setState({
+            Cards: []
+        })
+    }
+
     CardList = async () => {
-        const results = await getData(this.props.endpoint);
+        const { endpoint } = this.props;
+        const results = await getData(endpoint);
 
         this.setState({
             Cards: results.map((result, i) => (
-                <DataCard
-                    key={i}
-                    endpoint={this.props.endpoint}
-                    data={result}
-                />
+                <DataCard key={i} endpoint={endpoint} data={result} />
             ))
         });
     };
