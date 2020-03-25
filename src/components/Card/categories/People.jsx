@@ -7,7 +7,6 @@ import CardActions from "@material-ui/core/CardActions";
 import Collapse from "@material-ui/core/Collapse";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import useStyles from "../Common";
@@ -28,14 +27,18 @@ function People({ data }) {
         birth_year,
         hair_color,
         skin_color,
-        eye_color
+        eye_color,
+        url
     } = data;
+
+    const pattern = /(\d+)/g;
+    let imageNumber = url.match(pattern);
 
     return (
         <Card className={`${classes.root}, card`}>
             <CardMedia
                 className={classes.media}
-                image="https://starwars-visualguide.com/assets/img/films/4.jpg"
+                image={`https://starwars-visualguide.com/assets/img/characters/${imageNumber}.jpg`}
                 title={name}
             />
             <CardContent className="text-black">
@@ -47,9 +50,6 @@ function People({ data }) {
                 </Typography>
             </CardContent>
             <CardActions className="cardActions" disableSpacing>
-                <IconButton aria-label="share">
-                    <ShareIcon />
-                </IconButton>
                 <IconButton
                     className={clsx(classes.expand, {
                         [classes.expandOpen]: expanded

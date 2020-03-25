@@ -7,7 +7,6 @@ import CardActions from "@material-ui/core/CardActions";
 import Collapse from "@material-ui/core/Collapse";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import useStyles from "../Common";
@@ -29,14 +28,18 @@ function Planets({ data }) {
         climate,
         gravity,
         surface_water,
-        population
+        population,
+        url
     } = data;
+
+    const pattern = /(\d+)/g;
+    let imageNumber = url.match(pattern);
 
     return (
         <Card className={`${classes.root}, card`}>
             <CardMedia
                 className={classes.media}
-                image="https://starwars-visualguide.com/assets/img/films/4.jpg"
+                image={`https://starwars-visualguide.com/assets/img/planets/${imageNumber}.jpg`}
                 name={name}
             />
             <CardContent className="text-black">
@@ -48,9 +51,6 @@ function Planets({ data }) {
                 </Typography>
             </CardContent>
             <CardActions className="cardActions" disableSpacing>
-                <IconButton aria-label="share">
-                    <ShareIcon />
-                </IconButton>
                 <IconButton
                     className={clsx(classes.expand, {
                         [classes.expandOpen]: expanded

@@ -91,7 +91,7 @@ export default function CustomizedDialogs() {
                     </Typography>
                     <div className="about__links">
                         <Typography color="primary" gutterBottom>
-                            Components are provided by{" "}
+                            • Components are provided by{" "}
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -101,13 +101,23 @@ export default function CustomizedDialogs() {
                             </a>
                         </Typography>
                         <Typography color="primary" gutterBottom>
-                            Star Wars API by{" "}
+                            • Star Wars API by{" "}
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 href="https://swapi.co/"
                             >
                                 SWAPI
+                            </a>
+                        </Typography>
+                        <Typography color="primary" gutterBottom>
+                            • Images taken from{" "}
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://starwars-visualguide.com/"
+                            >
+                                Star Wars Visual Guide
                             </a>
                         </Typography>
                     </div>

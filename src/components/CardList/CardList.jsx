@@ -70,6 +70,9 @@ class CardList extends Component {
     }
 }
 
+// Function to fetch the data from swapi.co
+// This will also cache the fetched data in session storage
+// for faster access in each session.
 async function cacheData(endpoint) {
     try {
         let cachedData = JSON.parse(sessionStorage.getItem(endpoint));
