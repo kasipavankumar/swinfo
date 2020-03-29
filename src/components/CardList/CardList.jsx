@@ -59,28 +59,20 @@ class CardList extends Component {
                 return <div className="cards__grid">{Cards}</div>;
             }
         }
-
-        /* return Cards.length === 0 ? (
-            <div className="circularProgressIndicator">
-                <CircularProgress />
-            </div>
-        ) : (
-            <div className="cards__grid">{Cards}</div>
-        ); */
     }
 }
 
 // Function to fetch the data from swapi.co
-// This will also cache the fetched data in session storage
-// for faster access in each session.
+// This will also cache the fetched data in 
+// local storage for faster access.
 async function cacheData(endpoint) {
     try {
-        let cachedData = JSON.parse(sessionStorage.getItem(endpoint));
+        let cachedData = JSON.parse(localStorage.getItem(endpoint));
 
         if (cachedData == null || cachedData === undefined) {
             const response = await fetch(`https://swapi.co/api/${endpoint}/`);
             const data = await response.json();
-            sessionStorage.setItem(endpoint, JSON.stringify(data.results));
+            localStorage.setItem(endpoint, JSON.stringify(data.results));
             return data.results;
         } else {
             return cachedData;

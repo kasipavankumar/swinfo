@@ -28,7 +28,9 @@ const DialogTitle = withStyles(styles)(props => {
     const { children, classes, onClose, ...other } = props;
     return (
         <MuiDialogTitle disableTypography className={classes.root} {...other}>
-            <Typography color="primary" variant="h6">{children}</Typography>
+            <Typography color="primary" variant="h6">
+                {children}
+            </Typography>
             {onClose ? (
                 <IconButton
                     aria-label="close"
@@ -86,8 +88,8 @@ export default function CustomizedDialogs() {
                         full stack web developer from India.
                     </Typography>
                     <Typography color="primary" gutterBottom>
-                        This site is made as a project for web development
-                        course on Udemy.
+                        This is a project site made during my web development
+                        course at Udemy.
                     </Typography>
                     <div className="about__links">
                         <Typography color="primary" gutterBottom>
@@ -118,6 +120,24 @@ export default function CustomizedDialogs() {
                                 href="https://starwars-visualguide.com/"
                             >
                                 Star Wars Visual Guide
+                            </a>
+                        </Typography>
+                        <Typography color="primary" gutterBottom>
+                            •{" "}
+                            <a
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                href="https://icons8.com/icons/set/star-wars"
+                            >
+                                Star Wars favicon
+                            </a>{" "}
+                            icon by{" "}
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://icons8.com"
+                            >
+                                Icons8
                             </a>
                         </Typography>
                     </div>
