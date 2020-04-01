@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import { CircularProgress } from "@material-ui/core";
+import axios from "axios";
 import DataCard from "../Card/Card";
 import DismissibleAlert from "../Alert/Alert";
-import { CircularProgress } from "@material-ui/core";
 
 import "./CardList.scss";
 
@@ -63,17 +64,21 @@ class CardList extends Component {
 }
 
 // Function to fetch the data from swapi.co
-// This will also cache the fetched data in 
+// This will also cache the fetched data in
 // local storage for faster access.
 async function cacheData(endpoint) {
     try {
         let cachedData = JSON.parse(localStorage.getItem(endpoint));
 
         if (cachedData == null || cachedData === undefined) {
-            const response = await fetch(`https://swapi.co/api/${endpoint}/`);
-            const data = await response.json();
-            localStorage.setItem(endpoint, JSON.stringify(data.results));
-            return data.results;
+            const response = await axios.get(
+                `https://swapi.co/api/${endpoint}/`
+            );
+            localStorage.setItem(
+                endpoint,
+                JSON.stringify(response.data.results)
+            );
+            return response.data.results;
         } else {
             return cachedData;
         }
