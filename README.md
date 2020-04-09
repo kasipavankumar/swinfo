@@ -1,6 +1,8 @@
 # Star Wars Info
 ## All the Star Wars related information you have ever wanted, now in Material Design.
 
+![SWInfo CI](https://github.com/code-plus-coffee/swinfo/workflows/SWInfo%20CI/badge.svg)
+
 **The [Star Wars API](https://swapi.co) used in this project is no longer maintained.
 Hence, the website might not be able to display the data.**
 
