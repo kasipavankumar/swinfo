@@ -7,7 +7,7 @@ import Starships from "./categories/Starships";
 import Species from "./categories/Species";
 import Planets from "./categories/Planets";
 
-export default function DataCard({ endpoint, data }) {
+function DataCard({ endpoint, data }) {
     switch (endpoint) {
         case "films":
             return <Films data={data} />;
@@ -28,6 +28,8 @@ export default function DataCard({ endpoint, data }) {
             return <Planets data={data} />;
 
         default:
-            return "";
+            return null;
     }
 }
+
+export default DataCard;

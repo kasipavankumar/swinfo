@@ -11,7 +11,7 @@ class CardList extends Component {
         super(props);
         this.state = {
             Cards: [],
-            hasErrors: false
+            hasErrors: false,
         };
     }
 
@@ -21,18 +21,19 @@ class CardList extends Component {
 
     componentWillUnmount() {
         this.setState({
-            Cards: []
+            Cards: [],
         });
     }
 
     CardList = async () => {
         const { endpoint } = this.props;
         const results = await cacheData(endpoint);
+
         if (results !== "error") {
             this.setState({
                 Cards: results.map((result, i) => (
                     <DataCard key={i} endpoint={endpoint} data={result} />
-                ))
+                )),
             });
         } else {
             this.setState({ hasErrors: true });
@@ -66,24 +67,37 @@ class CardList extends Component {
 // Function to fetch the data from swapi.co
 // This will also cache the fetched data in
 // local storage for faster access.
-async function cacheData(endpoint) {
-    try {
-        let cachedData = JSON.parse(localStorage.getItem(endpoint));
+export async function cacheData(endpoint) {
+    const expectedEndpoints = [
+        "films",
+        "people",
+        "vehicles",
+        "species",
+        "planets",
+        "starships"
+    ];
 
-        if (cachedData == null || cachedData === undefined) {
-            const response = await axios.get(
-                `https://swapi.co/api/${endpoint}/`
-            );
-            localStorage.setItem(
-                endpoint,
-                JSON.stringify(response.data.results)
-            );
-            return response.data.results;
-        } else {
-            return cachedData;
+    if (expectedEndpoints.includes(endpoint.toLowerCase())) {
+        try {
+            let cachedData = JSON.parse(localStorage.getItem(endpoint));
+
+            if (cachedData == null || cachedData === undefined) {
+                const response = await axios.get(
+                    `https://swapi.co/api/${endpoint}/`
+                );
+                localStorage.setItem(
+                    endpoint,
+                    JSON.stringify(response.data.results)
+                );
+                return response.data.results;
+            } else {
+                return cachedData;
+            }
+        } catch (error) {
+            return "error";
         }
-    } catch (error) {
-        return "error";
+    } else {
+        throw new Error("Invalid endpoint!");
     }
 }
 
