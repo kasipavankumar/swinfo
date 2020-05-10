@@ -1,12 +1,14 @@
-# Star Wars Info
-## All the Star Wars related information you have ever wanted, now in Material Design.
+<div align="center">
+    <img alt="Star Wars" src="https://emojis.slackmojis.com/emojis/images/1450473969/205/stormtrooper.png" width="60">
+</div>
 
-**The [Star Wars API](https://swapi.co) used in this project is no longer maintained.
-Hence, the website might not be able to display the data.**
+# Star Wars Info
+
+## All the Star Wars related information you have ever wanted, now in Material Design.
 
 A web application developed using [ReactJS](https://reactjs.org) & [Material UI](https://material-ui.com).
 
-All the textual information is provided by [SWAPI](https://swapi.co).
+All the textual information is provided by the new [SWAPI (.dev)](https://swapi.dev).
 
 All credits for images go to [Star Wars Visual Guide](https://starwars-visualguide.com).
 
@@ -22,7 +24,7 @@ All credits for images go to [Star Wars Visual Guide](https://starwars-visualgui
 # Install dependencies
 3. npm install
 
-# Start the development server. 
+# Start the development server.
 # Default: localhost:3000 or 127.0.0.1:3000
 4. npm start
 
@@ -32,10 +34,11 @@ npm build
 
 Repository Links:
 
-* [React](https://github.com/facebook/react)
-* [Material UI](https://github.com/mui-org/material-ui)
-* [SWAPI](https://github.com/phalt/swapi)
-* [Star Wars Visual Guide](https://github.com/tbone849/star-wars-guide)
+- [React](https://github.com/facebook/react)
+- [Material UI](https://github.com/mui-org/material-ui)
+- [SWAPI (New)](https://github.com/Juriy/swapi)
+- [SWAPI (Depracated)](https://github.com/phalt/swapi)
+- [Star Wars Visual Guide](https://github.com/tbone849/star-wars-guide)
 
 ---
 

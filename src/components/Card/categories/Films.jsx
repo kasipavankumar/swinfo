@@ -14,56 +14,54 @@ import useStyles from "../Common";
 import "../Card.scss";
 
 function Films({ data }) {
-    const classes = useStyles();
-    const [expanded, setExpanded] = React.useState(false);
-    
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
+	const classes = useStyles();
+	const [expanded, setExpanded] = React.useState(false);
 
-    const { title, opening_crawl, release_date, director, producer, url } = data;
+	const handleExpandClick = () => {
+		setExpanded(!expanded);
+	};
 
-    const pattern = /(\d+)/g;
-    let imageNumber = url.match(pattern);
+	const { title, opening_crawl, release_date, director, producer, url } = data;
 
-    return (
-        <Card className={`${classes.root}, card`}>
-            <CardMedia
-                className={classes.media}
-                image={`https://starwars-visualguide.com/assets/img/films/${imageNumber}.jpg`}
-                title={title}
-            />
-            <CardContent className="text-black">
-                <Typography gutterBottom variant="h5" component="h2">
-                    {title}
-                </Typography>
-                <Typography variant="body2" component="p">
-                    {opening_crawl}
-                </Typography>
-            </CardContent>
-            <CardActions className="cardActions" disableSpacing>
-                <IconButton
-                    className={clsx(classes.expand, {
-                        [classes.expandOpen]: expanded
-                    })}
-                    onClick={handleExpandClick}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                >
-                    <ExpandMoreIcon />
-                </IconButton>
-            </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent className="text-black">
-                    <Typography paragraph>
-                        Release Date: {release_date}
-                    </Typography>
-                    <Typography paragraph>Director: {director}</Typography>
-                    <Typography paragraph>Producer: {producer}</Typography>
-                </CardContent>
-            </Collapse>
-        </Card>
-    );
+	const pattern = /(\d+)/g;
+	let imageNumber = url.match(pattern);
+
+	return (
+		<Card className={`${classes.root}, card`}>
+			<CardMedia
+				className={classes.media}
+				image={`https://starwars-visualguide.com/assets/img/films/${imageNumber}.jpg`}
+				height="100px"
+				title={title}
+			/>
+			<CardContent className="text-black">
+				<Typography gutterBottom variant="h5" component="h2">
+					{title}
+				</Typography>
+				<Typography variant="body2" component="p">
+					{opening_crawl}
+				</Typography>
+			</CardContent>
+			<CardActions className="cardActions" disableSpacing>
+				<IconButton
+					className={clsx(classes.expand, {
+						[classes.expandOpen]: expanded,
+					})}
+					onClick={handleExpandClick}
+					aria-expanded={expanded}
+					aria-label="show more">
+					<ExpandMoreIcon />
+				</IconButton>
+			</CardActions>
+			<Collapse in={expanded} timeout="auto" unmountOnExit>
+				<CardContent className="text-black">
+					<Typography paragraph>Release Date: {release_date}</Typography>
+					<Typography paragraph>Director: {director}</Typography>
+					<Typography paragraph>Producer: {producer}</Typography>
+				</CardContent>
+			</Collapse>
+		</Card>
+	);
 }
 
 export default Films;

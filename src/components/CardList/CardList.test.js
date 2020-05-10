@@ -9,19 +9,19 @@ jest.mock("axios");
 
 // Test suite for CardList
 describe("Test Suite", () => {
-    // Test if API call is successful
-    test("API successfully called", () => {
-        const endpoint = "films";
-        const url = `https://swapi.co/api/${endpoint}/`;
+	// Test if API call is successful
+	test("API successfully called", () => {
+		const endpoint = "films";
+		const url = `https://swapi.dev/api/${endpoint}/`;
 
-        render(<CardList endpoint={endpoint} />);
+		render(<CardList endpoint={endpoint} />);
 
-        expect(axiosMock.get).toHaveBeenCalledTimes(1);
-        expect(axiosMock.get).toHaveBeenCalledWith(url);
-    });
+		expect(axiosMock.get).toHaveBeenCalledTimes(1);
+		expect(axiosMock.get).toHaveBeenCalledWith(url);
+	});
 
-    // Test if cacheData is an instance of Function
-    test("cacheData is a function", () => {
-        expect(cacheData).toBeInstanceOf(Function);
-    });
+	// Test if cacheData is an instance of Function
+	test("cacheData is a function", () => {
+		expect(cacheData).toBeInstanceOf(Function);
+	});
 });

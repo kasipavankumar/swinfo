@@ -7,22 +7,22 @@ $width-name: max-width;
 $target-width: 320px;
 
 .circularProgressIndicator {
-    @include flex(column, center, center);
-    margin: 0;
-    width: auto;
-    height: 70vh;
+	@include flex(column, center, center);
+	margin: 0;
+	width: auto;
+	height: 70vh;
 }
 
 .cards {
-    &__grid {
-        @include grid(10px, $template-columns);
-    }
+	&__grid {
+		@include grid(10px, $template-columns);
+	}
 }
 
 @media screen and ($width-name: $target-width) {
-    .cards {
-        &__grid {
-            @include grid(10px, $template-columns-mobile);
-        }
-    }
+	.cards {
+		&__grid {
+			@include grid(10px, $template-columns-mobile);
+		}
+	}
 }

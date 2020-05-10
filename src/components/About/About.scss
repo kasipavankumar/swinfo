@@ -1,20 +1,20 @@
 @import "../../stylesheets/partials/common";
 
 .avatar {
-    &__image {
-        margin: auto;
-        padding: 10px 0 10px 0;
-    }
+	&__image {
+		margin: auto;
+		padding: 10px 0 10px 0;
+	}
 }
 
 .about {
-    &__links {
-        a {
-            @extend .links;
-        }
-    }
+	&__links {
+		a {
+			@extend .links;
+		}
+	}
 }
 
 .bg-primary-grey {
-    background-color: $primaryGrey !important;
+	background-color: $primaryGrey !important;
 }

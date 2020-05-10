@@ -11,138 +11,129 @@ import InfoRounded from "@material-ui/icons/InfoRounded";
 
 import "./About.scss";
 
-const styles = theme => ({
-    root: {
-        margin: 0,
-        padding: theme.spacing(2)
-    },
-    closeButton: {
-        position: "absolute",
-        right: theme.spacing(1),
-        top: theme.spacing(1),
-        color: theme.palette.grey[500]
-    }
+const styles = (theme) => ({
+	root: {
+		margin: 0,
+		padding: theme.spacing(2),
+	},
+	closeButton: {
+		position: "absolute",
+		right: theme.spacing(1),
+		top: theme.spacing(1),
+		color: theme.palette.grey[500],
+	},
 });
 
-const DialogTitle = withStyles(styles)(props => {
-    const { children, classes, onClose, ...other } = props;
-    return (
-        <MuiDialogTitle disableTypography className={classes.root} {...other}>
-            <Typography color="primary" variant="h6">
-                {children}
-            </Typography>
-            {onClose ? (
-                <IconButton
-                    aria-label="close"
-                    className={classes.closeButton}
-                    onClick={onClose}
-                >
-                    <CloseIcon color="primary" />
-                </IconButton>
-            ) : null}
-        </MuiDialogTitle>
-    );
+const DialogTitle = withStyles(styles)((props) => {
+	const { children, classes, onClose, ...other } = props;
+	return (
+		<MuiDialogTitle disableTypography className={classes.root} {...other}>
+			<Typography color="primary" variant="h6">
+				{children}
+			</Typography>
+			{onClose ? (
+				<IconButton
+					aria-label="close"
+					className={classes.closeButton}
+					onClick={onClose}>
+					<CloseIcon color="primary" />
+				</IconButton>
+			) : null}
+		</MuiDialogTitle>
+	);
 });
 
-const DialogContent = withStyles(theme => ({
-    root: {
-        padding: theme.spacing(2)
-    }
+const DialogContent = withStyles((theme) => ({
+	root: {
+		padding: theme.spacing(2),
+	},
 }))(MuiDialogContent);
 
 export default function CustomizedDialogs() {
-    const [open, setOpen] = React.useState(false);
+	const [open, setOpen] = React.useState(false);
 
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-    const handleClose = () => {
-        setOpen(false);
-    };
+	const handleClickOpen = () => {
+		setOpen(true);
+	};
+	const handleClose = () => {
+		setOpen(false);
+	};
 
-    return (
-        <div>
-            <IconButton onClick={handleClickOpen}>
-                <InfoRounded color="primary" />
-            </IconButton>
-            <Dialog
-                onClose={handleClose}
-                aria-labelledby="customized-dialog-title"
-                open={open}
-            >
-                <DialogTitle
-                    id="customized-dialog-title"
-                    onClose={handleClose}
-                    className="bg-primary-grey"
-                >
-                    Developer
-                </DialogTitle>
-                <DialogContent className="bg-primary-grey" dividers>
-                    <Avatar
-                        className="avatar__image"
-                        alt="kman"
-                        src="https://avatars0.githubusercontent.com/u/44864604?s=90"
-                    />
-                    <Typography color="primary" gutterBottom>
-                        Hello there, my name is <strong>thekman</strong>. I'm a
-                        full stack web developer from India.
-                    </Typography>
-                    <Typography color="primary" gutterBottom>
-                        This is a project site made during my web development
-                        course at Udemy.
-                    </Typography>
-                    <div className="about__links">
-                        <Typography color="primary" gutterBottom>
-                            • Components are provided by{" "}
-                            <a
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href="https://material-ui.com/"
-                            >
-                                Material UI
-                            </a>
-                        </Typography>
-                        <Typography color="primary" gutterBottom>
-                            • Star Wars API by{" "}
-                            <a
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href="https://swapi.co/"
-                            >
-                                SWAPI
-                            </a>
-                        </Typography>
-                        <Typography color="primary" gutterBottom>
-                            • Images taken from{" "}
-                            <a
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href="https://starwars-visualguide.com/"
-                            >
-                                Star Wars Visual Guide
-                            </a>
-                        </Typography>
-                        <Typography color="primary" gutterBottom>
-                            •{" "}
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href="https://icons8.com/icons/set/star-wars"
-                            >
-                                Star Wars favicon
-                            </a>{" "}
-                            icon by{" "}
-                            <a
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href="https://icons8.com"
-                            >
-                                Icons8
-                            </a>
-                        </Typography>
-                    </div>
-                </DialogContent>
-            </Dialog>
-        </div>
-    );
+	return (
+		<div>
+			<IconButton onClick={handleClickOpen}>
+				<InfoRounded color="primary" />
+			</IconButton>
+			<Dialog
+				onClose={handleClose}
+				aria-labelledby="customized-dialog-title"
+				open={open}>
+				<DialogTitle
+					id="customized-dialog-title"
+					onClose={handleClose}
+					className="bg-primary-grey">
+					About me
+				</DialogTitle>
+				<DialogContent className="bg-primary-grey" dividers>
+					<Avatar
+						className="avatar__image"
+						alt="kman"
+						src="https://avatars0.githubusercontent.com/u/44864604?s=90"
+					/>
+					<Typography color="primary" gutterBottom>
+						Hello there, my name is <strong>kman</strong>. I'm a full stack web
+						developer from India.
+					</Typography>
+					<Typography color="primary" gutterBottom>
+						This is a project made during my web development course at Udemy.
+					</Typography>
+					<div className="about__links">
+						<Typography color="primary" gutterBottom>
+							• Components are provided by{" "}
+							<a
+								target="_blank"
+								rel="noopener noreferrer"
+								href="https://material-ui.com/">
+								Material UI
+							</a>
+						</Typography>
+						<Typography color="primary" gutterBottom>
+							• Star Wars API by{" "}
+							<a
+								target="_blank"
+								rel="noopener noreferrer"
+								href="https://swapi.dev/">
+								SWAPI (.dev)
+							</a>
+						</Typography>
+						<Typography color="primary" gutterBottom>
+							• Images are being sourced from{" "}
+							<a
+								target="_blank"
+								rel="noopener noreferrer"
+								href="https://starwars-visualguide.com/">
+								Star Wars Visual Guide
+							</a>
+						</Typography>
+						<Typography color="primary" gutterBottom>
+							•{" "}
+							<a
+								rel="noopener noreferrer"
+								target="_blank"
+								href="https://icons8.com/icons/set/star-wars">
+								Star Wars favicon
+							</a>{" "}
+							icon by{" "}
+							<a
+								target="_blank"
+								rel="noopener noreferrer"
+								href="https://icons8.com">
+								Icons8
+							</a>
+						</Typography>
+					</div>
+				</DialogContent>
+			</Dialog>
+		</div>
+	);
 }

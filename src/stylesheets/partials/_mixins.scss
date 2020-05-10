@@ -1,14 +1,14 @@
 /// Flex.
 @mixin flex($direction, $alignItems, $justifyContent) {
-    display: flex;
-    flex-direction: $direction;
-    align-items: $alignItems;
-    justify-content: $justifyContent;
+	display: flex;
+	flex-direction: $direction;
+	align-items: $alignItems;
+	justify-content: $justifyContent;
 }
 
 /// Grid.
 @mixin grid($gap, $template-columns) {
-    display: grid;
-    gap: $gap;
-    grid-template-columns: $template-columns;
+	display: grid;
+	gap: $gap;
+	grid-template-columns: $template-columns;
 }

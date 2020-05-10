@@ -12,81 +12,75 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import useStyles from "../Common";
 
 function Vehicles({ data }) {
-    const classes = useStyles();
-    const [expanded, setExpanded] = React.useState(false);
+	const classes = useStyles();
+	const [expanded, setExpanded] = React.useState(false);
 
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
+	const handleExpandClick = () => {
+		setExpanded(!expanded);
+	};
 
-    const {
-        model,
-        manufacturer,
-        cost_in_credits,
-        length,
-        max_atmosphering_speed,
-        crew,
-        passengers,
-        cargo_capacity,
-        name,
-        vehicle_class,
-        url
-    } = data;
+	const {
+		model,
+		manufacturer,
+		cost_in_credits,
+		length,
+		max_atmosphering_speed,
+		crew,
+		passengers,
+		cargo_capacity,
+		name,
+		vehicle_class,
+		url,
+	} = data;
 
-    const pattern = /(\d+)/g;
-    let imageNumber = url.match(pattern);
+	const pattern = /(\d+)/g;
+	let imageNumber = url.match(pattern);
 
-    return (
-        <Card className={`${classes.root}, card`}>
-            <CardMedia
-                className={classes.media}
-                image={`https://starwars-visualguide.com/assets/img/vehicles/${imageNumber}.jpg`}
-                title={name}
-            />
-            <CardContent className="text-black">
-                <Typography gutterBottom variant="h5" component="h2">
-                    {name}
-                </Typography>
-                <Typography variant="body2" component="p">
-                    Model: {model}
-                </Typography>
-                <Typography variant="body2" component="p">
-                    Manufacturer: {manufacturer}
-                </Typography>
-            </CardContent>
-            <CardActions className="cardActions" disableSpacing>
-                <IconButton
-                    className={clsx(classes.expand, {
-                        [classes.expandOpen]: expanded
-                    })}
-                    onClick={handleExpandClick}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                >
-                    <ExpandMoreIcon />
-                </IconButton>
-            </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent className="text-black">
-                    <Typography paragraph>
-                        Cost In Credits: {cost_in_credits}
-                    </Typography>
-                    <Typography paragraph>Length: {length}</Typography>
-                    <Typography paragraph>
-                        Max Speed: {max_atmosphering_speed}
-                    </Typography>
-                    <Typography paragraph>Crew: {crew}</Typography>
-                    <Typography paragraph>Passengers: {passengers}</Typography>
-                    <Typography paragraph>
-                        Cargo Capacity: {cargo_capacity}
-                    </Typography>
-                    <Typography paragraph>
-                        Vehicle Class: {vehicle_class}
-                    </Typography>
-                </CardContent>
-            </Collapse>
-        </Card>
-    );
+	return (
+		<Card className={`${classes.root}, card`}>
+			<CardMedia
+				className={classes.media}
+				image={`https://starwars-visualguide.com/assets/img/vehicles/${imageNumber}.jpg`}
+				title={name}
+				style={{
+					backgroundImage: `url('https://starwars-visualguide.com/assets/img/vehicles/${imageNumber}.jpg'), url('https://starwars-visualguide.com/assets/img/big-placeholder.jpg')`,
+				}}
+			/>
+			<CardContent className="text-black">
+				<Typography gutterBottom variant="h5" component="h2">
+					{name}
+				</Typography>
+				<Typography variant="body2" component="p">
+					Model: {model}
+				</Typography>
+				<Typography variant="body2" component="p">
+					Manufacturer: {manufacturer}
+				</Typography>
+			</CardContent>
+			<CardActions className="cardActions" disableSpacing>
+				<IconButton
+					className={clsx(classes.expand, {
+						[classes.expandOpen]: expanded,
+					})}
+					onClick={handleExpandClick}
+					aria-expanded={expanded}
+					aria-label="show more">
+					<ExpandMoreIcon />
+				</IconButton>
+			</CardActions>
+			<Collapse in={expanded} timeout="auto" unmountOnExit>
+				<CardContent className="text-black">
+					<Typography paragraph>Cost In Credits: {cost_in_credits}</Typography>
+					<Typography paragraph>Length: {length}</Typography>
+					<Typography paragraph>Max Speed: {max_atmosphering_speed}</Typography>
+					<Typography paragraph>Crew: {crew}</Typography>
+					<Typography paragraph>Passengers: {passengers}</Typography>
+					<Typography paragraph>Cargo Capacity: {cargo_capacity}</Typography>
+					<Typography paragraph>Vehicle Class: {vehicle_class}</Typography>
+				</CardContent>
+			</Collapse>
+		</Card>
+	);
 }
 
 export default Vehicles;
