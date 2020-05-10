@@ -1,21 +1,21 @@
 @import "./variables";
 
 .links {
-	text-decoration: none;
-	color: $primaryYellow;
+    text-decoration: none;
+    color: $primaryYellow;
 
-	border-bottom: 1.5px solid $primaryYellow;
+    border-bottom: 1.5px solid $primaryYellow;
 
-	&:hover {
-		text-decoration: none;
-		border-bottom: none;
-	}
+    &:hover {
+        text-decoration: none;
+        border-bottom: none;
+    }
 }
 
 .bg-grey {
-	background-color: $primaryGrey !important;
+    background-color: $primaryGrey !important;
 }
 
 .text-yellow {
-	color: $primaryYellow !important;
+    color: $primaryYellow !important;
 }

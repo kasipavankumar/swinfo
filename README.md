@@ -6,8 +6,6 @@
 
 ## All the Star Wars related information you have ever wanted, now in Material Design.
 
-![SWInfo CI](https://github.com/code-plus-coffee/swinfo/workflows/SWInfo%20CI/badge.svg)
-
 A web application developed using [ReactJS](https://reactjs.org) & [Material UI](https://material-ui.com).
 
 All the textual information is provided by the new [SWAPI (.dev)](https://swapi.dev).
